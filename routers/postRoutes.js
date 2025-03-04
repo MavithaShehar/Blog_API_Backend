@@ -1,6 +1,5 @@
 const express = require('express')
 const routers = express.Router();
-
 const authController = require('../controllers/postController')
 
 routers.post('/', authController.create);
