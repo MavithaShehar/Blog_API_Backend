@@ -1,7 +1,7 @@
 const express = require('express')
 const routers = express.Router();
 
-const authController = require('../controllers/postController')
+const authController = require('../controllers/userController')
 
 routers.post('/', authController.create);
 routers.get('/:id', authController.getById); 

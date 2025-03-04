@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const userModel = new mongoose.Schema({
-
   name: {
     type: String,
     required: true,
@@ -11,9 +10,9 @@ const userModel = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  age: {
-    type: Number,
-    required: true,
+  password: {  
+    type: String,
+    required: true,  
   },
 });
 
