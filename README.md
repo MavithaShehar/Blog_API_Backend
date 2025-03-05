@@ -38,3 +38,43 @@
 
 
 
+## 🚀 Postman Collection / cURL Commands
+### **Option 1: Postman Collection**
+1. Open **Postman** → Click **Import** → Select **"Export Collection"**.
+
+
+### **Option : cURL Commands**
+
+### User
+
+```bash
+# Register a new user
+curl -X POST http://localhost:3000/api/register \
+     -H "Content-Type: application/json" \
+     -d '{"username": "john", "email": "john@example.com", "password": "john1111"}'
+
+# Login
+curl -X POST http://localhost:3000/api/login \
+     -H "Content-Type: application/json" \
+     -d '{"email": "john@example.com", "password": "john1111"}'
+```
+
+### Post
+
+```bash
+# Get all posts (requires JWT token)
+curl -X GET http://localhost:3000/api/posts \
+     -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+
+# Create a post (requires JWT token)
+curl -X POST http://localhost:3000/api/posts \
+     -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"title": "My Post", "content": "Hello World!", "author": "USER_ID"}'
+```
+
+
+
+
+
+
