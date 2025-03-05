@@ -64,17 +64,48 @@ curl -X POST http://localhost:3000/api/login \
 
 ```bash
 # Get all posts (requires JWT token)
-curl -X GET http://localhost:3000/api/posts \
-     -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
-```
-```bash
-# Create a post (requires JWT token)
-curl -X POST http://localhost:3000/api/posts \
-     -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-     -H "Content-Type: application/json" \
-     -d '{"title": "My Post", "content": "Hello World!", "author": "USER_ID"}'
+curl --location 'localhost:3000/api/posts'
 ```
 
+```bash
+# Get posts by Id (requires JWT token)
+curl --location 'http://localhost:3000/api/posts/ {add id}'
+```
+
+```bash
+# Create a post (requires JWT token)
+curl --location 'localhost:3000/api/posts' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2M3YWQwYzhiM2EwNjlmNGIzZjk2NzEiLCJpYXQiOjE3NDExMzkyMTYsImV4cCI6MTc0MTE0MjgxNn0.XH3-s8kvUpPZSU2bqL6MJBNFVhMBdIpavcRSRyG6NOc' \
+--data '{ 
+  "title": "First Post 01",
+  "content": "This is the content for the first post.",
+  "author": "create user Id",  
+  "createdAt": "2025-03-05T12:00:00Z",
+  "updatedAt": "2025-03-05T12:00:00Z"
+}
+'
+```
+
+```bash
+# Update posts by Id (requires JWT token)
+curl --location --request PUT 'http://localhost:3000/api/posts/ {use user id}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title": "My First Blog Post 02",
+    "content": "This of my first blog post.",
+    "author": "use user id" 
+}
+'
+```
+
+```bash
+# Delete posts by Id (requires JWT token)
+curl --location --request DELETE 'http://localhost:3000/api/posts/67c74cdb17b070f8f4bcae69' \
+--header 'Content-Type: application/json' \
+--data '
+'
+```
 
 
 
